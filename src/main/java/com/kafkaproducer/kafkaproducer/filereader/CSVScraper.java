@@ -24,7 +24,7 @@ public class CSVScraper {
     }
 
     public void processSongs() {
-        String filePath = "";
+        String filePath = "/Users/gregbook/IdeaProjects/kafkaproducer/src/main/resources/lyrics.csv";
 
         //stash change
         mutateSong = new MutateSong();
@@ -35,7 +35,7 @@ public class CSVScraper {
                        .build()
                        .parse();
             kafkaProducer.sendMessage(songs.get(2));
-                /*
+
         for(int i = 0; i < iterations; i++) {
             for (Song song : songs) {
                 System.out.println(song);
@@ -46,7 +46,7 @@ public class CSVScraper {
 
         }
 
-                 */
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
